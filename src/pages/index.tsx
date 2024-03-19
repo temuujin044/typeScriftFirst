@@ -1,7 +1,3 @@
-import { SideMenu } from "@/components/SideMenu";
-import { ShowField } from "@/components/ShowField";
-import { useState } from "react";
-
 let sideMenus = [
   {
     id: 0,
@@ -190,17 +186,3 @@ let sideMenus = [
     ],
   },
 ];
-
-export default function Home() {
-  const [menu, setMenu] = useState<number>(0);
-  return (
-    <div className="flex">
-      <div className="bg-slate-300 w-[320px] flex flex-col gap-2 h-[310px] p-4 pl-4">
-        {sideMenus.map((val) => {
-          return <SideMenu data={val} state={setMenu} />;
-        })}
-      </div>
-      <ShowField data={sideMenus[menu]} />
-    </div>
-  );
-}
